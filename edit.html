@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="sriemp">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Registration</title>
+
+  <style>
+  table {
+      border-spacing: 10px;
+      border-collapse: collapse;
+  }
+
+  table, td, th {
+      border: 0px solid black;
+  }
+
+  td { 
+      padding: 10px;
+  }
+
+  .align-center {
+      display: block;
+      margin: 4.0em auto;
+      text-align: center;
+  }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+
+
+</head>
+
+<body style="text-align:center;" ng-controller="EditCtrl">
+  
+  <div align="center">
+  <fieldset class="align-center" style="width: 100px; text-align:center;">
+  <legend><b>Edit Employee</b></legend>
+  <table border="1">
+  <form name="EmpReg">
+  <tr>
+    <td colspan="2"> 
+      <div id="errorBox" style="color: red"></div> <div id="sucBox" style="color: green"></div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2"> <input style="width: 98%, height: 20px"  name="first_name" id="first_name" ng-model="emp.first_name" placeholder="First Name" type="text" style="width: 98.5%"> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <input name="last_name" id="last_name" ng-model="emp.last_name" placeholder="Last Name" type="text"> </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2"> <input name="e_id" id="e_id" ng-model="emp.e_id" placeholder="Employee ID" type="text"> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <input name="e_mail" id="e_mail" ng-model="emp.e_mail" placeholder="E-Mail" type="text"> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <input name="pass" id="pass" ng-model="emp.pass" placeholder="Password" type="password"> </td>
+  </tr>
+  
+  
+  <tr>
+    <td colspan="2"> <input name="phone" id="phone" ng-model="emp.phone" placeholder="Phone #" type="text"> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <input name="address" id="address" ng-model="emp.address" placeholder="Address" type="text"> </td>
+  </tr>
+	
+  <tr>
+    <td colspan="2">
+		<select style="width: 98%; height: 20px;" ng-model="emp.country"                
+                ng-options="obj.id as obj.country for obj in countries"
+                ng-change="getCountryStates()"
+                name="country" id="country">
+          <option value="">-- Choose Country --</option>
+        </select>
+	</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+		<select style="width: 98%; height: 20px;" ng-model="emp.state"
+				name="state" id="state"
+                ng-options="x.Id as x.state for x in sates"
+                ng-change = "getStateCities()" >
+          <option value="">-- Choose State --</option>
+        </select>
+	</td>
+  </tr>
+  
+  <tr>
+    <td colspan="2">
+		<select style="width: 98%; height: 20px;" ng-model="emp.city"
+				name="city" id="city"
+                ng-options="x.Id as x.city for x in cities" >
+          <option value="">-- Choose City --</option>
+        </select>
+	</td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <input name="pin_code" id="pin_code" ng-model="emp.pin_code" placeholder="Pin Code" type="text"> </td>
+  </tr>
+
+  <tr>
+    <td style="border: 0px"><input type="radio" ng-model="emp.gender" name="gender" id="gender" value="male" /> Male</td>
+    <td style="border: 0px"><input type="radio" ng-model="emp.gender" name="gender" id="gender" value="female" /> Female </td>
+  </tr>
+
+  <tr>
+    <td style="border: 0px"><button type="reset" onClick='document.getElementById("errorBox").innerHTML = "";'> Back </button></td>
+    <td style="border: 0px"><button type="button" ng-click="update(emp.e_mail)" > Update </button></td>
+  </tr>
+
+  </form>
+  </table>
+
+  </fieldset>
+  </div>
+</body>
+</html>

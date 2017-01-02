@@ -1,0 +1,29 @@
+<fieldset class="align-center" style="width: 100px; text-align:center;">
+  <legend><b>Employee Registered</b></legend>
+  
+	<table border="1">
+		<tr>
+			<td colspan="2"> 
+			  <div id="errorBox" style="color: red"></div> <div id="sucBox" style="color: green"></div>
+			</td>
+		</tr>
+		
+		<tr data-ng-repeat="user in users track by $index">
+			<td> {{ user.first_name }} </td>
+			<td> {{ user.last_name }} </td>
+			<td> {{ user.e_id }} </td>
+			<td> {{ user.e_mail }} </td>
+			<td> {{ user.pass }} </td>
+			<td> {{ user.phone }} </td>
+			<td> {{ user.address }} </td>
+			<td> {{ user.country }} </td>
+			<td> {{ user.state }} </td>
+			<td> {{ user.city }} </td>
+			<td> {{ user.pin_code }} </td>
+			<td> {{ user.gender }} </td>
+			<td> <a href="edit.html#/?email={{ user.e_mail }}"> Edit </a> </td>
+			<td> <a href="#" ng-click="deleteItem($index)"> Delete </a> </td>
+		</tr>
+	</table>
+
+</fieldset>

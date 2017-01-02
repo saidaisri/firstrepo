@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="sriemp">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Login</title>
+
+  <style>
+  table {
+      border-spacing: 10px;
+      border-collapse: collapse;
+  }
+
+  table, td, th {
+      border: 0px solid black;
+  }
+
+  td { 
+      padding: 10px;
+  }
+
+  .align-center {
+      display: block;
+      margin: 13.0em auto;
+      text-align: center;
+  }
+  </style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+	
+</head>
+
+<body style="text-align:center;" ng-controller="MainCtrl" >
+  
+  <div align="center">
+  <fieldset class="align-center" style="width: 100px; text-align:center;">
+  <legend><b>Employee Login</b></legend>
+  <table border="1">
+  <form name="form" method="post">
+  <tr>
+    <td colspan="2"> <div id="errorBox" style="color: red"></div> <div id="sucBox" style="color: green"></div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2"> <input style="width: 98%, height: 20px"  name="e_mail" id="e_mail" ng-model="emp.e_mail" placeholder="Email" type="text" style="width: 98.5%"> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <input name="pass" id="pass" ng-model="emp.pass" placeholder="Password" type="password"> </td>
+  </tr>
+  
+  <tr>
+    <td style="border: 0px"><button type="reset" onClick='document.getElementById("errorBox").innerHTML = "";'>Clear </button></td>
+    <td style="border: 0px"><button type="button" ng-click="LoginEmp()" >Login </button></td>
+  </tr>
+
+  </form>
+  </table>
+
+  </fieldset>
+  </div>
+</body>
+</html>

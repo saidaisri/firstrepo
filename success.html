@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="sriemp">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Available</title>
+
+  <style>
+  table {
+      border-spacing: 10px;
+      border-collapse: collapse;
+  }
+
+  table, td, th {
+      border: 0px solid black;
+  }
+
+  td { 
+      padding: 10px;
+  }
+
+  .align-center {
+      display: block;
+      margin: 4.0em auto;
+      text-align: center;
+  }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+
+
+
+</head>
+
+<body style="text-align:center;" ng-controller="MainCtrl">
+  
+  <div align="center">
+  <fieldset class="align-center" style="width: 100px; text-align:center;">
+  <legend><b>Welcome {{ login_user.first_name }}</b></legend>
+  
+	<table border="1">
+		<tr>
+			<td colspan="2"> 
+			  <div id="errorBox" style="color: red"></div> <div id="sucBox" style="color: green"></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="width: 100px;"> First Name </td>
+			<td> {{ login_user.first_name }} </td>
+		</tr>
+		
+		<tr>
+			<td> Last Name </td>
+			<td> {{ login_user.last_name }} </td>
+		</tr>
+		
+		<tr>
+			<td> Employee ID </td>
+			<td> {{ login_user.e_id }} </td>
+		</tr>
+		
+		<tr>
+			<td> E Mail </td>
+			<td> {{ login_user.e_mail }} </td>
+		</tr>
+		
+		<tr>
+			<td> Phone </td>
+			<td> {{ login_user.phone }} </td>
+		</tr>
+		
+		<tr>
+			<td> First Name </td>
+			<td> {{ login_user.address }} </td>
+		</tr>
+		
+		<tr>
+			<td> Country </td>
+			<td> {{ login_user.country }} </td>
+		</tr>
+		
+		<tr>
+			<td> State </td>
+			<td> {{ login_user.state }} </td>
+		</tr>
+		
+		<tr>
+			<td> City </td>
+			<td> {{ login_user.city }} </td>
+		</tr>
+		
+		<tr>
+			<td> Pin Code </td>
+			<td> {{ login_user.pin_code }} </td>
+		</tr>
+		
+		<tr>
+			<td> Gender </td>
+			<td> {{ login_user.gender }} </td>
+		</tr>
+		
+	</table>
+
+  </fieldset>
+  </div>
+</body>
+</html>

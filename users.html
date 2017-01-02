@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="sriemp">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Available</title>
+
+  <style>
+  table {
+      border-spacing: 10px;
+      border-collapse: collapse;
+  }
+
+  table, td, th {
+      border: 0px solid black;
+  }
+
+  td { 
+      padding: 10px;
+  }
+
+  .align-center {
+      display: block;
+      margin: 4.0em auto;
+      text-align: center;
+  }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+  <script src="core_e.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+
+
+</head>
+
+<body style="text-align:center;" ng-controller="EditCtrl">
+  
+  <div align="center">
+  <fieldset class="align-center" style="width: 100px; text-align:center;">
+  <legend><b>Employee Registered</b></legend>
+	<sri-directive usersd="users"></sri-directive>
+  </fieldset>
+  </div>
+</body>
+</html>
